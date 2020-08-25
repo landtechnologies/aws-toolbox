@@ -1,0 +1,10 @@
+name: "aws toolbox"
+description: "A suite of common tools for aws usage"
+runs:
+  using: "composite"
+  steps:
+    - name: aliases
+      run: |
+        mkdir -p $HOME/.aws/cli
+        curl --fail -sL -o $HOME/.aws/cli/alias https://raw.githubusercontent.com/landtechnologies/reformation/master/assets/aws-alias
+      shell: bash
